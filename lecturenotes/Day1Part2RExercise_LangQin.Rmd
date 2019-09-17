@@ -170,11 +170,11 @@ for (i in years) {
 
 - Try the same, this time for continents!
   - Which continent has the highest mean life expectancy?
-```{r mean by continent}
-lifeExp_by_country <- aggregate(gapminder$lifeExp~gapminder$continent, FUN=mean)
-for (i in 1:nrow(lifeExp_by_country)){
-    print(lifeExp_by_country[i, ])
-}
+```{r mean by continent 2}
+#lifeExp_by_country <- aggregate(gapminder$lifeExp~gapminder$continent, FUN=mean)
+#for (i in 1:nrow(lifeExp_by_country)){
+#   print(lifeExp_by_country[i, ])
+#}
 ```
 
 ## Mean life expectancy by continent
@@ -182,11 +182,11 @@ for (i in 1:nrow(lifeExp_by_country)){
 ```{r mean by continent}
 conts <- unique(gapminder$continent)
 
-for (i in conts) {
-  mean_le <- mean(gapminder$lifeExp[gapminder$continent == i], 
-                  na.rm = T)
-  print(paste0(i, ": ", mean_le))
-}
+#for (i in conts) {
+#  mean_le <- mean(gapminder$lifeExp[gapminder$continent == i], 
+#                  na.rm = T)
+#  print(paste0(i, ": ", mean_le))
+#}
 ```
 
 ## double up!
@@ -195,7 +195,7 @@ for (i in conts) {
 - What is the mean life expectancy for each continent for each year?
 
 ## the nested `for` loop 
-```{r nested for loop}
+```{r nested for loop 2}
 conts <- unique(gapminder$continent)
 years <- unique(gapminder$year)
 
@@ -313,8 +313,8 @@ for (i in vars) {
 - `lapply(vector, function)`
 
 ```{r lapply, warning = F, message = F}
-lapply(gapminder, mean)
-sapply(gapminder, mean)
+#lapply(gapminder, mean)
+#sapply(gapminder, mean)
 ```
 
 ## Anonymous functions in `apply`
@@ -338,7 +338,7 @@ sapply(years, function(x) mean(gapminder$lifeExp[gapminder$year == x]))
 - Similar syntax to the `for` loop -> `while (condition) { function }`
 - Often, you define an interator that you will increase for each loop
 
-```{r while loop}
+```{r while loop 2}
 i <-  1952 # define the interator
 
 while (i < 1987) {
